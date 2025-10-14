@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>六年級比與比值@lanki｜調飲達人 v4.6</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <h1>六年級比與比值@lanki <span class="sub">｜調飲達人 v4.6</span></h1>
+      <div class="meta">
+        <div class="stat">學生：<input id="studentName" placeholder="請輸入姓名或綽號" /></div>
+        <div class="stat">分數：<span id="score">0</span></div>
+        <div class="stat">最高分：<span id="best">0</span></div>
+        <div class="stat">關卡：<span id="level">1</span>/<span id="levelTotal">15</span></div>
+        <div class="stat">用時：<span id="timer">0</span>s</div>
+      </div>
+    </header>
+
+    <main class="game">
+      <section class="left">
+        <div class="cup-wrap">
+          <img id="jarOverlay" src="assets/ui/jar.png" alt="jar" class="cup-overlay"/>
+          <canvas id="glass" width="720" height="920" aria-label="調飲玻璃罐畫面"></canvas>
+        </div>
+        <div class="legend imgs">
+          <div class="legend-item"><img src="assets/ui/sugar.png" alt="糖"/><span>糖</span></div>
+          <div class="legend-item"><img src="assets/ui/water.png" alt="水"/><span>水</span></div>
+        </div>
+      </section>
+
+      <section class="right">
+        <div class="card target">
+          <h2>顧客期望濃度</h2>
+          <div id="promptArea" class="prompt"></div>
+          <div class="hint">提示：比值＝糖 ÷ 水（可用分數或小數）。<br>＊本遊戲不限時，想久一點也可以。</div>
+        </div>
+
+        <div class="card controls">
+          <h2>調配控制</h2>
+          <div class="ctrl">
+            <label for="sugarRange">糖量 <span id="sugarVal" class="val">0</span></label>
+            <input type="range" id="sugarRange" min="0" max="200" step="1" value="0" />
+          </div>
+          <div class="ctrl">
+            <label for="waterRange">水量 <span id="waterVal" class="val">0</span></label>
+            <input type="range" id="waterRange" min="0" max="200" step="1" value="0" />
+          </div>
+
+          <!-- 比值輸入（分數/小數） -->
+          <div class="ctrl ratio-input" id="ratioBox">
+            <label for="ratioInput">你的比值（糖 ÷ 水）</label>
+            <input id="ratioInput" placeholder="例如 1/5 或 0.2（可約分）" />
+          </div>
+
+          <!-- 比輸入（a:b） -->
+          <div class="ctrl pair-input hidden" id="pairBox">
+            <label>你的比</label>
+            <div class="pair">
+              <input id="pairA" inputmode="numeric" pattern="\d*" placeholder="例 3" />
+              <span class="colon">：</span>
+              <input id="pairB" inputmode="numeric" pattern="\d*" placeholder="例 7" />
+            </div>
+            <div class="note">（請填整數，系統會自動約比）</div>
+          </div>
+
+          <div class="ctrl buttons">
+            <button id="btnMix" class="primary"><img src="assets/ui/mix.png" alt="" class="icon"/>完成調配</button>
+            <button id="btnReset" class="ghost"><img src="assets/ui/reset.png" alt="" class="icon"/>重設</button>
+          </div>
+        </div>
+
+        <div class="card feedback" id="feedback">
+          <div class="face" id="face">🙂</div>
+          <div class="msg" id="msg">請依題目調出指定濃度，並填上你的比/比值。</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <button id="btnReview" class="ghost big">查看回顧</button>
+      <button id="btnExportCSV" class="ghost big">匯出CSV</button>
+      <button id="btnClearLogs" class="ghost big">清除紀錄</button>
+    </footer>
+
+    <canvas id="celebrate" class="hidden"></canvas>
+
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-body">
+        <h2 id="modalTitle">資訊</h2>
+        <div id="modalContent"></div>
+        <div class="modal-actions">
+          <button id="btnCloseModal" class="primary">關閉</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/game.js"></script>
+  </div>
+</body>
+</html>
