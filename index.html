@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173a34">
+  <meta name="description" content="Lanki 老師的互動學習遊戲與教學工具總目錄。">
+  <meta name="application-name" content="Lanki 遊戲教室">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="Lanki 遊戲教室">
+  <meta property="og:description" content="把學習，變成一場好玩的冒險。數學、語文與生活探索遊戲都在這裡。">
+  <meta property="og:url" content="https://lanki20.github.io/lankigame/">
+  <meta property="og:image" content="https://lanki20.github.io/lankigame/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lanki 遊戲教室">
+  <meta name="twitter:description" content="把學習，變成一場好玩的冒險。">
+  <meta name="twitter:image" content="https://lanki20.github.io/lankigame/og.jpg">
+  <title>Lanki 遊戲教室</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#games">跳到遊戲列表</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Lanki 遊戲教室首頁">
+      <span class="brand-mark" aria-hidden="true">L</span>
+      <span>Lanki 遊戲教室</span>
+    </a>
+    <span class="online-state" id="onlineState">可離線瀏覽目錄</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="hero-copy">
+        <p class="eyebrow">LEARN · PLAY · GROW</p>
+        <h1 id="pageTitle">把學習，變成<br><span>一場好玩的冒險。</span></h1>
+        <p class="hero-text">數學實驗、語文闖關、生活探索都在這裡。選一個主題，馬上開始挑戰！首頁可加到手機主畫面，離線時也能繼續查看目錄。</p>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <span class="orbit orbit-one"></span>
+        <span class="orbit orbit-two"></span>
+        <span class="hero-emoji">🎮</span>
+        <span class="spark spark-one">✦</span>
+        <span class="spark spark-two">＋</span>
+      </div>
+    </section>
+
+    <section class="catalog" id="games" aria-labelledby="catalogTitle">
+      <div class="catalog-heading">
+        <div>
+          <p class="eyebrow">GAME LIBRARY</p>
+          <h2 id="catalogTitle">選一個遊戲開始</h2>
+        </div>
+        <p class="game-count" id="gameCount" aria-live="polite"></p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <span class="sr-only">搜尋遊戲</span>
+          <input id="searchInput" type="search" placeholder="搜尋遊戲或主題…" autocomplete="off">
+        </label>
+        <div class="filters" id="filters" aria-label="遊戲分類"></div>
+      </div>
+
+      <div class="game-grid" id="gameGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>找不到符合的遊戲，換個關鍵字試試看。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>為每一次好奇心準備的小小遊樂場 · 最後整理於 2026</p>
+    <a href="https://github.com/lanki20" target="_blank" rel="noopener">GitHub ↗</a>
+  </footer>
+
+  <script src="./games.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
+

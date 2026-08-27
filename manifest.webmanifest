@@ -1,0 +1,13 @@
+{
+  "name": "Lanki 遊戲教室",
+  "short_name": "遊戲教室",
+  "description": "Lanki 老師的互動學習遊戲與教學工具總目錄。",
+  "lang": "zh-Hant-TW",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f2e8",
+  "theme_color": "#173a34",
+  "categories": ["education", "games"]
+}
+
