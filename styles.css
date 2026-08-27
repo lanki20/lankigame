@@ -47,10 +47,28 @@ main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 h1, h2, h3, p { text-wrap: balance; }
 h1 { margin: 0; max-width: 780px; font-family: Georgia, "Noto Serif TC", serif; font-size: clamp(48px, 7vw, 88px); line-height: .98; letter-spacing: -.055em; font-weight: 700; }
 .headline-line { display: block; }
+.headline-gradient {
+  width: fit-content;
+  color: transparent;
+  background: linear-gradient(120deg, #173a34 8%, #5da296 92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 h1 .headline-accent { color: #517a70; }
 .hero-text { max-width: 590px; margin: 28px 0 0; color: var(--muted); font-size: 17px; line-height: 1.8; }
-.hero-card { position: relative; aspect-ratio: 1; max-width: 430px; justify-self: end; width: 100%; display: grid; place-items: center; overflow: hidden; border-radius: 52% 48% 45% 55% / 46% 57% 43% 54%; background: var(--lime); box-shadow: var(--shadow); transform: rotate(2deg); }
-.hero-card::before { content: ""; position: absolute; width: 68%; aspect-ratio: 1; border: 2px solid rgba(23,58,52,.2); border-radius: 50%; }
+.hero-card { position: relative; isolation: isolate; aspect-ratio: 1; max-width: 430px; justify-self: end; width: 100%; display: grid; place-items: center; overflow: visible; background: transparent; transform: rotate(2deg); }
+.hero-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 5% 1% 2% 0;
+  border-radius: 58% 42% 61% 39% / 46% 58% 42% 54%;
+  background: radial-gradient(ellipse at 46% 44%, rgba(220,239,112,.96) 0 34%, rgba(168,213,199,.72) 53%, rgba(220,239,112,.3) 67%, rgba(246,242,232,0) 82%);
+  filter: blur(25px);
+  opacity: .92;
+  transform: rotate(-5deg) scale(.98);
+}
 .hero-image { position: relative; z-index: 1; width: 112%; max-width: none; height: auto; filter: drop-shadow(0 15px 12px rgba(23,58,52,.16)); transform: rotate(-2deg); }
 .orbit { position: absolute; width: 22px; height: 22px; border: 5px solid var(--ink); border-radius: 50%; }
 .orbit-one { top: 19%; left: 18%; }.orbit-two { right: 16%; bottom: 18%; width: 14px; height: 14px; }
