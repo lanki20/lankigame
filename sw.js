@@ -1,5 +1,5 @@
-const CACHE_NAME = "lanki-game-library-v2";
-const SHELL = ["./", "./index.html", "./styles.css?v=2", "./games.js", "./app.js", "./manifest.webmanifest"];
+const CACHE_NAME = "lanki-game-library-v3";
+const SHELL = ["./", "./index.html", "./styles.css?v=3", "./games.js?v=3", "./app.js", "./manifest.webmanifest", "./hero-adventure.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(SHELL)));
@@ -18,15 +18,12 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET" || new URL(event.request.url).origin !== self.location.origin) return;
 
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      const fresh = fetch(event.request)
-        .then((response) => {
-          if (response.ok) caches.open(CACHE_NAME).then((cache) => cache.put(event.request, response.clone()));
-          return response;
-        })
-        .catch(() => cached || (event.request.mode === "navigate" ? caches.match("./index.html") : Response.error()));
-      return cached || fresh;
-    })
+    fetch(event.request)
+      .then((response) => {
+        if (response.ok) caches.open(CACHE_NAME).then((cache) => cache.put(event.request, response.clone()));
+        return response;
+      })
+      .catch(() => caches.match(event.request).then((cached) => cached || (event.request.mode === "navigate" ? caches.match("./index.html") : Response.error())))
   );
 });
 

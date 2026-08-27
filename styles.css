@@ -43,14 +43,15 @@ input, textarea, [contenteditable="true"] { caret-color: auto; }
 
 main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 .hero { min-height: 510px; display: grid; grid-template-columns: 1.16fr .84fr; gap: 72px; align-items: center; padding: 68px 0; }
-.eyebrow { margin: 0 0 14px; font-size: 12px; font-weight: 900; letter-spacing: .18em; color: #56746b; }
+.eyebrow { margin: 0 0 14px; font-size: clamp(9px, 1.2vw, 12px); font-weight: 900; letter-spacing: .12em; color: #56746b; }
 h1, h2, h3, p { text-wrap: balance; }
 h1 { margin: 0; max-width: 780px; font-family: Georgia, "Noto Serif TC", serif; font-size: clamp(48px, 7vw, 88px); line-height: .98; letter-spacing: -.055em; font-weight: 700; }
-h1 span { color: #517a70; }
+.headline-line { display: block; }
+h1 .headline-accent { color: #517a70; }
 .hero-text { max-width: 590px; margin: 28px 0 0; color: var(--muted); font-size: 17px; line-height: 1.8; }
-.hero-card { position: relative; aspect-ratio: 1; max-width: 390px; justify-self: end; width: 100%; display: grid; place-items: center; overflow: hidden; border-radius: 52% 48% 45% 55% / 46% 57% 43% 54%; background: var(--lime); box-shadow: var(--shadow); transform: rotate(2deg); }
+.hero-card { position: relative; aspect-ratio: 1; max-width: 430px; justify-self: end; width: 100%; display: grid; place-items: center; overflow: hidden; border-radius: 52% 48% 45% 55% / 46% 57% 43% 54%; background: var(--lime); box-shadow: var(--shadow); transform: rotate(2deg); }
 .hero-card::before { content: ""; position: absolute; width: 68%; aspect-ratio: 1; border: 2px solid rgba(23,58,52,.2); border-radius: 50%; }
-.hero-emoji { position: relative; font-size: clamp(84px, 12vw, 142px); filter: drop-shadow(0 14px 0 rgba(23,58,52,.1)); transform: rotate(-5deg); }
+.hero-image { position: relative; z-index: 1; width: 112%; max-width: none; height: auto; filter: drop-shadow(0 15px 12px rgba(23,58,52,.16)); transform: rotate(-2deg); }
 .orbit { position: absolute; width: 22px; height: 22px; border: 5px solid var(--ink); border-radius: 50%; }
 .orbit-one { top: 19%; left: 18%; }.orbit-two { right: 16%; bottom: 18%; width: 14px; height: 14px; }
 .spark { position: absolute; color: var(--ink); font-size: 32px; font-weight: 900; }.spark-one { right: 20%; top: 17%; }.spark-two { left: 22%; bottom: 18%; }
@@ -100,6 +101,7 @@ footer p { margin: 0; } footer a { font-weight: 800; text-decoration: none; }
   .site-header, main, footer { width: min(100% - 28px, 1180px); }
   .site-header { min-height: 64px; }.online-state { display: none; }
   .hero { min-height: 0; padding: 46px 0 56px; }.hero-card { max-width: 250px; }.hero-text { font-size: 15px; }
+  .hero-copy > .eyebrow { max-width: 330px; line-height: 1.7; }
   .catalog { padding: 54px 0 64px; }.catalog-heading { align-items: flex-start; flex-direction: column; gap: 12px; }.toolbar { margin-top: 26px; }.search-box { min-width: 0; }
   .game-grid { grid-template-columns: 1fr; gap: 16px; }.game-card { display: grid; grid-template-columns: 122px 1fr; border-radius: 18px; }.card-visual { height: 100%; min-height: 205px; }.card-visual::after { inset: 34px 17px; transform: rotate(-8deg); }.card-icon { font-size: 53px; }.card-number { top: 15px; left: 15px; }.card-dot { right: 15px; bottom: 15px; }.card-body { padding: 20px 18px; }.card-body h3 { font-size: 22px; }.card-body p { min-height: 0; font-size: 13px; }.card-meta { flex-direction: column; gap: 4px; }.play-link { margin-top: 16px; }
   footer { flex-direction: column; }

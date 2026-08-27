@@ -156,6 +156,18 @@ window.GAMES = [
     tags: ["生字", "預習", "國語"]
   },
   {
+    id: "grade-six-words",
+    title: "六年級生字預習",
+    subtitle: "自主學習工坊",
+    description: "用互動任務預習六年級生字，依自己的步調建立字詞基礎。",
+    category: "語文",
+    icon: "🌱",
+    tone: "coral",
+    url: "https://lanki-learning-atelier.lanki-learning-atelier.workers.dev/",
+    repo: "lanki-learning-atelier",
+    tags: ["六年級", "生字", "預習", "自主學習"]
+  },
+  {
     id: "summer-reading",
     title: "暑假閱讀系統",
     subtitle: "六年級閱讀",
@@ -232,7 +244,7 @@ window.GAMES = [
     title: "問答火力戰",
     subtitle: "快問快答",
     description: "用題目展開節奏明快的問答對戰，適合課堂暖身與複習。",
-    category: "教室",
+    category: "語文",
     icon: "🚀",
     tone: "coral",
     url: "https://lanki20.github.io/1-6/quiz-battle/index.html",
