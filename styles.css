@@ -20,9 +20,11 @@ body {
   background: var(--paper);
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  caret-color: transparent;
 }
 a { color: inherit; }
 button, input { font: inherit; }
+input, textarea, [contenteditable="true"] { caret-color: auto; }
 .sr-only, .skip-link:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .skip-link:focus { position: fixed; z-index: 20; top: 12px; left: 12px; padding: 10px 14px; background: var(--ink); color: white; border-radius: 8px; }
 
