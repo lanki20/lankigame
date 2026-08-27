@@ -1,5 +1,5 @@
-const CACHE_NAME = "lanki-game-library-v4";
-const SHELL = ["./", "./index.html", "./styles.css?v=4", "./games.js?v=3", "./app.js", "./manifest.webmanifest", "./hero-adventure.png"];
+const CACHE_NAME = "lanki-game-library-v5";
+const SHELL = ["./", "./index.html", "./styles.css?v=4", "./games.js?v=3", "./app.js?v=2", "./manifest.webmanifest", "./hero-adventure.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(SHELL)));

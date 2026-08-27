@@ -25,7 +25,7 @@
         <div class="card-meta"><span>${game.category}</span><span>${game.subtitle}</span></div>
         <h3>${game.title}</h3>
         <p>${game.description}</p>
-        <a class="play-link" href="${game.url}" aria-label="開始玩${game.title}">
+        <a class="play-link" href="${game.url}" target="_blank" rel="noopener noreferrer" aria-label="開始玩${game.title}（在新分頁開啟）">
           開始玩 <span aria-hidden="true">↗</span>
         </a>
       </div>`;
